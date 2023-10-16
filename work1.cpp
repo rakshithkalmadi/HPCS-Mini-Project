@@ -7,16 +7,7 @@ using namespace cv;
 using namespace std;
 
 int main()
-{	//for color image
-	//Mat_<Vec3b> image = imread("./image1.jpg", IMREAD_COLOR);
-	Mat image = imread("./image1.jpg", IMREAD_GRAYSCALE);
-	//for grayscale
-	int w = image.cols;
-	int h = image.rows;
-	
-	cout << w << ", " << h<<endl;
-	
-	//-----------------------------------------
+{	//-----------------------------------------
 	int threshold(int v) 
 	{
     		return (v >= 0) ? 1 : 0;
@@ -48,7 +39,7 @@ int main()
 
 int main() 
 {
-	Mat image = imread("your_image.jpg", IMREAD_GRAYSCALE);
+	Mat image = imread("image1.jpg", IMREAD_GRAYSCALE);
 	if (image.empty()) 
     	{
         	cout << "Error: Image not found or could not be loaded." << endl;
