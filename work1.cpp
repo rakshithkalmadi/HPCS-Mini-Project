@@ -6,8 +6,7 @@
 using namespace cv;
 using namespace std;
 
-int main()
-{	//-----------------------------------------
+//-----------------------------------------
 	int threshold(int v) 
 	{
     		return (v >= 0) ? 1 : 0;
