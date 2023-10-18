@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "opencv2/opencv.hpp"
+#include <chrono>
 
 using namespace cv;
 
@@ -21,12 +22,15 @@ int b(int a, int b, int c) {
 }
 
 int main() {
+    auto start_time = std::chrono::high_resolution_clock::now();
     Mat image = imread("image1.jpg", IMREAD_GRAYSCALE);
 
     if (image.empty()) {
         printf("Image not found or could not be opened.\n");
         return 1;
     }
+	auto image_load_time = std::chrono::high_resolution_clock::now();
+	auto image_loading_duration = std::chrono::duration_cast<std::chrono::milliseconds>(image_load_time - start_time);
 
     Mat result_image(image.rows, image.cols, CV_8UC1); // Create a new image to store the results
 
@@ -62,10 +66,17 @@ int main() {
             result_image.at<uchar>(y, x)=static_cast<uchar>(decimal_value);
         }
     }
+	auto end_time = std::chrono::high_resolution_clock::now();
 
-    // Save the result image
-    imwrite("result_image.jpg", result_image);
+    	// Calculate the total running time
+	auto total_duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+
+    	// Print the timings
+	printf("Image loading time: %ld ms\n", image_loading_duration.count());
+	printf("LTCP descriptor calculation time: %ld ms\n", total_duration.count() - image_loading_duration.count());
+	printf("Total running time: %ld ms\n", total_duration.count());
+    	// Save the result image
+	imwrite("result_image.jpg", result_image);
 
     return 0;
 }
-
