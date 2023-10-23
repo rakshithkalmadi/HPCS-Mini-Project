@@ -34,7 +34,7 @@ int main(int argc, char* argv[]) {
     }
     
 	auto image_load_time = std::chrono::high_resolution_clock::now();
-	auto image_loading_duration = std::chrono::duration_cast<std::chrono::microseconds>(image_load_time - start_time);
+	auto image_loading_duration = std::chrono::duration_cast<std::chrono::milliseconds>(image_load_time - start_time);
 
     Mat result_image(image.rows, image.cols, CV_8UC1); // Create a new image to store the results
 
@@ -90,28 +90,26 @@ int main(int argc, char* argv[]) {
             result_image.at<uchar>(y, x)=static_cast<uchar>(decimal_value);
         }
     }
-
+    MPI_Barrier(MPI_COMM_WORLD);
     // Gather the results from all processes to the root process
     MPI_Gather(result_image.data + start_row * result_image.cols, rows_per_process * result_image.cols,
            MPI_CHAR, result_image.data, rows_per_process * result_image.cols, MPI_CHAR,
            0, MPI_COMM_WORLD);
-
-	
-    	// Save the result image
-    MPI_Barrier(MPI_COMM_WORLD);
+    
+    
     if (rank == 0) {
         // std::cout<<result_image;
         auto end_time = std::chrono::high_resolution_clock::now();
 
     	// Calculate the total running time
-	auto total_duration = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time);
+	auto total_duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
 
     	// Print the timings
 	printf("Image loading time: %ld ms\n", image_loading_duration.count());
 	printf("LTCP descriptor calculation time: %ld ms\n", total_duration.count() - image_loading_duration.count());
 	printf("Total running time: %ld ms\n", total_duration.count());
 	imwrite("small.png", result_image);
-    std::cout<<result_image;
+    // std::cout<<result_image;
     }
     MPI_Finalize();
 
