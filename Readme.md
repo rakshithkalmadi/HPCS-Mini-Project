@@ -17,3 +17,9 @@ g++ serial.cpp -o output -I /usr/local/include/opencv4 -L /usr/local/lib -lopenc
 
 Format: g++ your_program.cpp -o your_program -I /path/to/opencv/include -L /path/to/opencv/lib -lopencv_core -lopencv_highgui -lopencv_imgcodecs
 
+Running Program using MPI (parallel_mpi.cpp):
+mpic++ parallel_mpi.cpp -o output_parallel -I /usr/local/include/opencv4 -L /usr/local/lib -lopencv_core -lopencv_highgui -lopencv_imgcodecs
+
+mpirun -n 5 ./output_parallel
+
+Here -n 5 denotes the number of processes to run this program in parallel, basically the rows of the matrix should be divisible by it. Here for example we have taken 10x10 image which has 10 rows and if we assign 5 processes the each process will be getting 2 rows which will work fine, but if you give the number of process like 4 it will not generate the image properly which leads to black lines in the image.
