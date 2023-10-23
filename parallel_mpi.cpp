@@ -55,41 +55,45 @@ int main(int argc, char* argv[]) {
 
     int start_row = rank * rows_per_process;
     int end_row = (rank == size - 1) ? image.rows : start_row + rows_per_process;
-
     for (int y = start_row; y < end_row; y++) {
         for (int x = 0; x < image.cols; x++) {
-            int P0 = image.at<uchar>(y, x);
-            int P1 = (x < image.cols - 1) ? image.at<uchar>(y, x + 1) : 0;
-            int P2 = (x < image.cols - 1 && y < image.rows - 1) ? image.at<uchar>(y + 1, x + 1) : 0;
-            int P3 = (y < image.rows - 1) ? image.at<uchar>(y + 1, x) : 0;
-            int P4 = (x > 0 && y < image.rows - 1) ? image.at<uchar>(y + 1, x - 1) : 0;
-            int P5 = (x > 0) ? image.at<uchar>(y, x - 1) : 0;
-            int P6 = (x > 0 && y > 0) ? image.at<uchar>(y - 1, x - 1) : 0;
-            int P7 = (y > 0) ? image.at<uchar>(y - 1, x) : 0;
-            int C = P0; // Assuming center pixel is P0
-            
-
-            int CP[8];
-            CP[0] = b(P7 - C, P0 - C, P1 - C);
-            CP[1] = b(P1 - C, P2 - C, P3 - C);
-            CP[2] = b(P3 - C, P4 - C, P5 - C);
-            CP[3] = b(P5 - C, P6 - C, P7 - C);
-            CP[4] = b(P6 - P0, C - P0, P2 - P0);
-            CP[5] = b(P4 - P2, C - P2, P0 - P2);
-            CP[6] = b(P2 - P4, C - P4, P6 - P4);
-            CP[7] = b(P0 - P6, C - P6, P4 - P6);
-
-            // Reverse the CP array and convert it to a decimal value
-            int decimal_value = 0;
-            for (int i = 7; i >= 0; i--) {
-                decimal_value = decimal_value * 2 + CP[i];
-            }
-            printf("Rank %d Decimal value  %d and C is %d at pos %d %d\n", rank,decimal_value,C,y,x);
-
-            // Set the pixel value in the result image
-            result_image.at<uchar>(y, x)=static_cast<uchar>(decimal_value);
+        	if(x > 0 && x < image.cols - 1)
+        	{
+        		if(y > 0 && y < image.rows - 1)
+        		{
+        			int C = image.at<uchar>(y, x);
+            			int P0 = image.at<uchar>(y, x + 1);
+            			int P1 = image.at<uchar>(y + 1, x + 1);
+            			int P2 = image.at<uchar>(y + 1, x);
+            			int P3 = image.at<uchar>(y + 1, x - 1);
+            			int P4 = image.at<uchar>(y, x - 1);
+            			int P5 = image.at<uchar>(y - 1, x - 1);
+            			int P6 = image.at<uchar>(y - 1, x);
+            			int P7 = image.at<uchar>(y - 1, x + 1);
+            			
+            			int CP[8];
+            			CP[0] = b(P7 - C, P0 - C, P1 - C);
+            			CP[1] = b(P1 - C, P2 - C, P3 - C);
+            			CP[2] = b(P3 - C, P4 - C, P5 - C);
+            			CP[3] = b(P5 - C, P6 - C, P7 - C);
+            			CP[4] = b(P6 - P0, C - P0, P2 - P0);
+            			CP[5] = b(P4 - P2, C - P2, P0 - P2);
+            			CP[6] = b(P2 - P4, C - P4, P6 - P4);
+            			CP[7] = b(P0 - P6, C - P6, P4 - P6);
+	
+            			// Reverse the CP array and convert it to a decimal value
+            			int decimal_value = 0;
+            			for (int i = 7; i >= 0; i--) {
+                			decimal_value = decimal_value * 2 + CP[i];
+            			}
+                        printf("Rank %d Decimal value  %d and C is %d at pos %d %d\n", rank,decimal_value,C,y,x);
+            			// Set the pixel value in the result image
+            			result_image.at<uchar>(y, x)=static_cast<uchar>(decimal_value);
+            		}
+            	}            
         }
     }
+
     MPI_Barrier(MPI_COMM_WORLD);
     // Gather the results from all processes to the root process
     MPI_Gather(result_image.data + start_row * result_image.cols, rows_per_process * result_image.cols,
@@ -109,7 +113,7 @@ int main(int argc, char* argv[]) {
 	printf("LTCP descriptor calculation time: %ld ms\n", total_duration.count() - image_loading_duration.count());
 	printf("Total running time: %ld ms\n", total_duration.count());
 	imwrite("small.png", result_image);
-    // std::cout<<result_image;
+    std::cout<<result_image;
     }
     MPI_Finalize();
 
