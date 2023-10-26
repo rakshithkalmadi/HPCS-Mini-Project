@@ -34,13 +34,10 @@ int main() {
 
     Mat result_image(image.rows, image.cols, CV_8UC1); // Create a new image to store the results
 
-    for (int y = 0; y < image.rows; y++) {
-        for (int x = 0; x < image.cols; x++) 
+    for (int y = 1; y < image.rows; y++) {
+        for (int x = 1; x < image.cols; x++) 
         {
-        	if(x > 0 && x < image.cols - 1)
-        	{
-        		if(y > 0 && y < image.rows - 1)
-        		{
+        	
         			int C = image.at<uchar>(y, x);
             			int P0 = image.at<uchar>(y, x + 1);
             			int P1 = image.at<uchar>(y + 1, x + 1);
@@ -69,8 +66,7 @@ int main() {
             			// Set the pixel value in the result image
             			result_image.at<uchar>(y, x)=static_cast<uchar>(decimal_value);
             		}
-            	}            
-        }
+            	
     }
 	auto end_time = std::chrono::high_resolution_clock::now();
 
