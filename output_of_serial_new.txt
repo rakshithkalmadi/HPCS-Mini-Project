@@ -1,0 +1,25 @@
+Running ./output for new/2400x3360.jpg serially
+Image loading time: 43 ms
+LTCP descriptor calculation time: 535 ms
+Total running time: 578 ms
+------------------------------------------
+Running ./output for new/2520x3480.jpg serially
+Image loading time: 50 ms
+LTCP descriptor calculation time: 619 ms
+Total running time: 669 ms
+------------------------------------------
+Running ./output for new/2640X3600.jpg serially
+Image loading time: 51 ms
+LTCP descriptor calculation time: 682 ms
+Total running time: 733 ms
+------------------------------------------
+Running ./output for new/2760x3720.jpg serially
+Image loading time: 56 ms
+LTCP descriptor calculation time: 715 ms
+Total running time: 771 ms
+------------------------------------------
+Running ./output for new/2880X3840.jpg serially
+Image loading time: 68 ms
+LTCP descriptor calculation time: 775 ms
+Total running time: 843 ms
+------------------------------------------

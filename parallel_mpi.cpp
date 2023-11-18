@@ -25,9 +25,9 @@ int b(int a, int b, int c) {
 
 int main(int argc, char* argv[]) {
     auto start_time = std::chrono::high_resolution_clock::now();
-    Mat image = imread("small_ip.png", IMREAD_GRAYSCALE);
+    Mat image = imread(argv[1], IMREAD_GRAYSCALE);
+    // printf("The arg value is : %s",argv[1]);
     // std::cout<<image;
-
     if (image.empty()) {
         printf("Image not found or could not be opened.\n");
         return 1;
@@ -47,7 +47,7 @@ int main(int argc, char* argv[]) {
     
     
     if(rank==0){
-        std::cout<<image;
+        // std::cout<<image;
     }
 
     int rows_per_process = image.rows / size;
@@ -86,7 +86,7 @@ int main(int argc, char* argv[]) {
             			for (int i = 7; i >= 0; i--) {
                 			decimal_value = decimal_value * 2 + CP[i];
             			}
-                        printf("Rank %d Decimal value  %d and C is %d at pos %d %d\n", rank,decimal_value,C,y,x);
+                        // printf("Rank %d Decimal value  %d and C is %d at pos %d %d\n", rank,decimal_value,C,y,x);
             			// Set the pixel value in the result image
             			result_image.at<uchar>(y, x)=static_cast<uchar>(decimal_value);
             		}
@@ -113,7 +113,7 @@ int main(int argc, char* argv[]) {
 	printf("LTCP descriptor calculation time: %ld ms\n", total_duration.count() - image_loading_duration.count());
 	printf("Total running time: %ld ms\n", total_duration.count());
 	imwrite("small.png", result_image);
-    std::cout<<result_image;
+    // std::cout<<result_image;
     }
     MPI_Finalize();
 

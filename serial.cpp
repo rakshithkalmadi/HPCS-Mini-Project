@@ -4,6 +4,7 @@
 #include <chrono>
 
 using namespace cv;
+using namespace std;
 
 int b(int a, int b, int c) {
     int positive_count = 0;
@@ -21,14 +22,15 @@ int b(int a, int b, int c) {
     return (positive_count >= 2) ? 1 : 0;
 }
 
-int main() {
+int main(int argc,char* argv[]) {
     auto start_time = std::chrono::high_resolution_clock::now();
-    Mat image = imread("image1.jpg", IMREAD_GRAYSCALE);
+    Mat image = imread(argv[1], IMREAD_GRAYSCALE);
     imwrite("grayscale_image.jpg", image);
     if (image.empty()) {
         printf("Image not found or could not be opened.\n");
         return 1;
     }
+	//cout<<image;
 	auto image_load_time = std::chrono::high_resolution_clock::now();
 	auto image_loading_duration = std::chrono::duration_cast<std::chrono::milliseconds>(image_load_time - start_time);
 
@@ -79,6 +81,7 @@ int main() {
 	printf("Total running time: %ld ms\n", total_duration.count());
     	// Save the result image
 	imwrite("result_image.jpg", result_image);
+	//cout<<result_image;
 
     return 0;
 }
