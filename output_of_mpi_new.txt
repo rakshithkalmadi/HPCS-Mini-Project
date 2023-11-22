@@ -1,150 +1,150 @@
 Running ./output_parallel for new/2400x3360.jpg with 2 processes
-Image loading time: 23 ms
-LTCP descriptor calculation time: 673 ms
-Total running time: 696 ms
+Image loading time: 45 ms
+LTCP descriptor calculation time: 819 ms
+Total running time: 864 ms
 ------------------------------------------
 Running ./output_parallel for new/2520x3480.jpg with 2 processes
-Image loading time: 27 ms
-LTCP descriptor calculation time: 710 ms
-Total running time: 737 ms
+Image loading time: 53 ms
+LTCP descriptor calculation time: 814 ms
+Total running time: 867 ms
 ------------------------------------------
 Running ./output_parallel for new/2640X3600.jpg with 2 processes
-Image loading time: 29 ms
-LTCP descriptor calculation time: 727 ms
-Total running time: 756 ms
+Image loading time: 47 ms
+LTCP descriptor calculation time: 898 ms
+Total running time: 945 ms
 ------------------------------------------
 Running ./output_parallel for new/2760x3720.jpg with 2 processes
-Image loading time: 29 ms
-LTCP descriptor calculation time: 745 ms
-Total running time: 774 ms
+Image loading time: 38 ms
+LTCP descriptor calculation time: 869 ms
+Total running time: 907 ms
 ------------------------------------------
 Running ./output_parallel for new/2880X3840.jpg with 2 processes
-Image loading time: 39 ms
-LTCP descriptor calculation time: 830 ms
-Total running time: 869 ms
+Image loading time: 47 ms
+LTCP descriptor calculation time: 840 ms
+Total running time: 887 ms
 ------------------------------------------
 Running ./output_parallel for new/2400x3360.jpg with 4 processes
-Image loading time: 29 ms
-LTCP descriptor calculation time: 617 ms
-Total running time: 646 ms
+Image loading time: 40 ms
+LTCP descriptor calculation time: 646 ms
+Total running time: 686 ms
 ------------------------------------------
 Running ./output_parallel for new/2520x3480.jpg with 4 processes
-Image loading time: 38 ms
-LTCP descriptor calculation time: 638 ms
-Total running time: 676 ms
+Image loading time: 41 ms
+LTCP descriptor calculation time: 675 ms
+Total running time: 716 ms
 ------------------------------------------
 Running ./output_parallel for new/2640X3600.jpg with 4 processes
-Image loading time: 35 ms
-LTCP descriptor calculation time: 668 ms
-Total running time: 703 ms
+Image loading time: 50 ms
+LTCP descriptor calculation time: 671 ms
+Total running time: 721 ms
 ------------------------------------------
 Running ./output_parallel for new/2760x3720.jpg with 4 processes
-Image loading time: 36 ms
-LTCP descriptor calculation time: 676 ms
-Total running time: 712 ms
+Image loading time: 48 ms
+LTCP descriptor calculation time: 719 ms
+Total running time: 767 ms
 ------------------------------------------
 Running ./output_parallel for new/2880X3840.jpg with 4 processes
-Image loading time: 47 ms
-LTCP descriptor calculation time: 672 ms
-Total running time: 719 ms
+Image loading time: 78 ms
+LTCP descriptor calculation time: 727 ms
+Total running time: 805 ms
 ------------------------------------------
 Running ./output_parallel for new/2400x3360.jpg with 6 processes
-Image loading time: 38 ms
-LTCP descriptor calculation time: 528 ms
-Total running time: 566 ms
+Image loading time: 45 ms
+LTCP descriptor calculation time: 654 ms
+Total running time: 699 ms
 ------------------------------------------
 Running ./output_parallel for new/2520x3480.jpg with 6 processes
-Image loading time: 31 ms
-LTCP descriptor calculation time: 611 ms
-Total running time: 642 ms
+Image loading time: 49 ms
+LTCP descriptor calculation time: 625 ms
+Total running time: 674 ms
 ------------------------------------------
 Running ./output_parallel for new/2640X3600.jpg with 6 processes
-Image loading time: 42 ms
-LTCP descriptor calculation time: 624 ms
-Total running time: 666 ms
+Image loading time: 61 ms
+LTCP descriptor calculation time: 729 ms
+Total running time: 790 ms
 ------------------------------------------
 Running ./output_parallel for new/2760x3720.jpg with 6 processes
-Image loading time: 36 ms
-LTCP descriptor calculation time: 637 ms
-Total running time: 673 ms
+Image loading time: 65 ms
+LTCP descriptor calculation time: 694 ms
+Total running time: 759 ms
 ------------------------------------------
 Running ./output_parallel for new/2880X3840.jpg with 6 processes
-Image loading time: 48 ms
-LTCP descriptor calculation time: 644 ms
-Total running time: 692 ms
+Image loading time: 85 ms
+LTCP descriptor calculation time: 705 ms
+Total running time: 790 ms
 ------------------------------------------
 Running ./output_parallel for new/2400x3360.jpg with 8 processes
-Image loading time: 29 ms
-LTCP descriptor calculation time: 597 ms
-Total running time: 626 ms
+Image loading time: 53 ms
+LTCP descriptor calculation time: 575 ms
+Total running time: 628 ms
 ------------------------------------------
 Running ./output_parallel for new/2520x3480.jpg with 8 processes
-Image loading time: 42 ms
-LTCP descriptor calculation time: 519 ms
-Total running time: 561 ms
+Image loading time: 51 ms
+LTCP descriptor calculation time: 680 ms
+Total running time: 731 ms
 ------------------------------------------
 Running ./output_parallel for new/2640X3600.jpg with 8 processes
-Image loading time: 49 ms
-LTCP descriptor calculation time: 589 ms
-Total running time: 638 ms
+Image loading time: 58 ms
+LTCP descriptor calculation time: 686 ms
+Total running time: 744 ms
 ------------------------------------------
 Running ./output_parallel for new/2760x3720.jpg with 8 processes
-Image loading time: 36 ms
-LTCP descriptor calculation time: 590 ms
-Total running time: 626 ms
+Image loading time: 58 ms
+LTCP descriptor calculation time: 728 ms
+Total running time: 786 ms
 ------------------------------------------
 Running ./output_parallel for new/2880X3840.jpg with 8 processes
-Image loading time: 48 ms
-LTCP descriptor calculation time: 611 ms
-Total running time: 659 ms
+Image loading time: 78 ms
+LTCP descriptor calculation time: 705 ms
+Total running time: 783 ms
 ------------------------------------------
 Running ./output_parallel for new/2400x3360.jpg with 10 processes
-Image loading time: 29 ms
-LTCP descriptor calculation time: 592 ms
-Total running time: 621 ms
+Image loading time: 53 ms
+LTCP descriptor calculation time: 654 ms
+Total running time: 707 ms
 ------------------------------------------
 Running ./output_parallel for new/2520x3480.jpg with 10 processes
-Image loading time: 33 ms
-LTCP descriptor calculation time: 618 ms
-Total running time: 651 ms
+Image loading time: 59 ms
+LTCP descriptor calculation time: 642 ms
+Total running time: 701 ms
 ------------------------------------------
 Running ./output_parallel for new/2640X3600.jpg with 10 processes
-Image loading time: 51 ms
-LTCP descriptor calculation time: 599 ms
-Total running time: 650 ms
+Image loading time: 63 ms
+LTCP descriptor calculation time: 723 ms
+Total running time: 786 ms
 ------------------------------------------
 Running ./output_parallel for new/2760x3720.jpg with 10 processes
-Image loading time: 37 ms
-LTCP descriptor calculation time: 631 ms
-Total running time: 668 ms
+Image loading time: 68 ms
+LTCP descriptor calculation time: 695 ms
+Total running time: 763 ms
 ------------------------------------------
 Running ./output_parallel for new/2880X3840.jpg with 10 processes
-Image loading time: 48 ms
-LTCP descriptor calculation time: 638 ms
-Total running time: 686 ms
+Image loading time: 86 ms
+LTCP descriptor calculation time: 745 ms
+Total running time: 831 ms
 ------------------------------------------
 Running ./output_parallel for new/2400x3360.jpg with 12 processes
-Image loading time: 40 ms
-LTCP descriptor calculation time: 656 ms
-Total running time: 696 ms
+Image loading time: 57 ms
+LTCP descriptor calculation time: 674 ms
+Total running time: 731 ms
 ------------------------------------------
 Running ./output_parallel for new/2520x3480.jpg with 12 processes
-Image loading time: 34 ms
-LTCP descriptor calculation time: 519 ms
-Total running time: 553 ms
+Image loading time: 68 ms
+LTCP descriptor calculation time: 697 ms
+Total running time: 765 ms
 ------------------------------------------
 Running ./output_parallel for new/2640X3600.jpg with 12 processes
-Image loading time: 36 ms
-LTCP descriptor calculation time: 546 ms
-Total running time: 582 ms
+Image loading time: 67 ms
+LTCP descriptor calculation time: 707 ms
+Total running time: 774 ms
 ------------------------------------------
 Running ./output_parallel for new/2760x3720.jpg with 12 processes
-Image loading time: 43 ms
-LTCP descriptor calculation time: 643 ms
-Total running time: 686 ms
+Image loading time: 71 ms
+LTCP descriptor calculation time: 660 ms
+Total running time: 731 ms
 ------------------------------------------
 Running ./output_parallel for new/2880X3840.jpg with 12 processes
-Image loading time: 51 ms
-LTCP descriptor calculation time: 629 ms
-Total running time: 680 ms
+Image loading time: 94 ms
+LTCP descriptor calculation time: 675 ms
+Total running time: 769 ms
 ------------------------------------------
