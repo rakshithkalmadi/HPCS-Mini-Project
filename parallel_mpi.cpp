@@ -106,9 +106,9 @@ int main(int argc, char* argv[]) {
     auto ltcp_duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - ltcp_start_time);
 
     	// Print the timings
-	printf("Image loading time: %ld ms\n", image_loading_duration.count());
+	// printf("Image loading time: %ld ms\n", image_loading_duration.count());
 	printf("LTCP descriptor calculation time: %ld ms\n", ltcp_duration.count());
-	printf("Total running time: %ld ms\n", total_duration.count());
+	// printf("Total running time: %ld ms\n", total_duration.count());
 	imwrite("small.png", result_image);
     // std::cout<<result_image;
     }

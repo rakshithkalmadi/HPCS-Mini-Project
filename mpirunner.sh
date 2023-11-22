@@ -15,11 +15,26 @@ for NUM_PROCESSES in {2..12..2}; do
             # Print information before running the program
             echo "Running $PROGRAM for $image_file with $NUM_PROCESSES processes"
 
-            # Run your program with mpirun
-            mpirun -n $NUM_PROCESSES $PROGRAM "$image_file"
+            # Initialize total duration for average calculation
+            total_duration=0
 
-            # Print a separator line for better readability
-            echo "------------------------------------------"
+            # Run your program with mpirun 5 times
+            for ((i=1; i<=5; i++)); do
+                echo "Run $i:"
+                # Capture the LTCP descriptor calculation time
+                duration=$(mpirun -n $NUM_PROCESSES $PROGRAM "$image_file" | grep "LTCP descriptor calculation time" | awk '{print $5}')
+                echo "LTCP descriptor calculation time: $duration ms"
+                
+                # Add the duration to the total
+                total_duration=$((total_duration + duration))
+
+                # Print a separator line for better readability
+                echo "------------------------------------------"
+            done
+
+            # Calculate the average duration
+            average_duration=$((total_duration / 5))
+            echo "Average LTCP descriptor calculation time: $average_duration ms"
         fi
     done
 done
