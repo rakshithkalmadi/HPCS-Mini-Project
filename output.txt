@@ -1,0 +1,337 @@
+Running ./output_parallel for new/2400x3360.jpg with 2 processes
+Run 1:
+LTCP descriptor calculation time: 338 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 300 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 375 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 427 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 391 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 366 ms
+Running ./output_parallel for new/2520x3480.jpg with 2 processes
+Run 1:
+LTCP descriptor calculation time: 356 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 326 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 474 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 409 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 398 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 392 ms
+Running ./output_parallel for new/2640X3600.jpg with 2 processes
+Run 1:
+LTCP descriptor calculation time: 435 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 432 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 441 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 435 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 450 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 438 ms
+Running ./output_parallel for new/2760x3720.jpg with 2 processes
+Run 1:
+LTCP descriptor calculation time: 465 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 466 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 463 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 473 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 463 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 466 ms
+Running ./output_parallel for new/2880X3840.jpg with 2 processes
+Run 1:
+LTCP descriptor calculation time: 505 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 504 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 505 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 505 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 507 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 505 ms
+Running ./output_parallel for new/2400x3360.jpg with 4 processes
+Run 1:
+LTCP descriptor calculation time: 242 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 242 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 243 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 261 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 253 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 248 ms
+Running ./output_parallel for new/2520x3480.jpg with 4 processes
+Run 1:
+LTCP descriptor calculation time: 260 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 259 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 263 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 275 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 264 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 264 ms
+Running ./output_parallel for new/2640X3600.jpg with 4 processes
+Run 1:
+LTCP descriptor calculation time: 308 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 285 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 282 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 303 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 288 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 293 ms
+Running ./output_parallel for new/2760x3720.jpg with 4 processes
+Run 1:
+LTCP descriptor calculation time: 321 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 303 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 328 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 330 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 330 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 322 ms
+Running ./output_parallel for new/2880X3840.jpg with 4 processes
+Run 1:
+LTCP descriptor calculation time: 362 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 338 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 338 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 340 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 332 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 342 ms
+Running ./output_parallel for new/2400x3360.jpg with 6 processes
+Run 1:
+LTCP descriptor calculation time: 216 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 216 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 216 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 216 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 213 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 215 ms
+Running ./output_parallel for new/2520x3480.jpg with 6 processes
+Run 1:
+LTCP descriptor calculation time: 237 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 232 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 214 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 208 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 208 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 219 ms
+Running ./output_parallel for new/2640X3600.jpg with 6 processes
+Run 1:
+LTCP descriptor calculation time: 233 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 224 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 226 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 222 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 229 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 226 ms
+Running ./output_parallel for new/2760x3720.jpg with 6 processes
+Run 1:
+LTCP descriptor calculation time: 244 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 246 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 252 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 277 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 249 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 253 ms
+Running ./output_parallel for new/2880X3840.jpg with 6 processes
+Run 1:
+LTCP descriptor calculation time: 305 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 266 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 257 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 265 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 282 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 275 ms
+Running ./output_parallel for new/2400x3360.jpg with 8 processes
+Run 1:
+LTCP descriptor calculation time: 156 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 155 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 160 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 164 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 159 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 158 ms
+Running ./output_parallel for new/2520x3480.jpg with 8 processes
+Run 1:
+LTCP descriptor calculation time: 174 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 170 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 194 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 202 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 179 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 183 ms
+Running ./output_parallel for new/2640X3600.jpg with 8 processes
+Run 1:
+LTCP descriptor calculation time: 185 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 188 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 198 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 194 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 203 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 193 ms
+Running ./output_parallel for new/2760x3720.jpg with 8 processes
+Run 1:
+LTCP descriptor calculation time: 205 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 207 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 204 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 213 ms
+------------------------------------------
+Run 5:
+LTCP descriptor calculation time: 227 ms
+------------------------------------------
+Average LTCP descriptor calculation time: 211 ms
+Running ./output_parallel for new/2880X3840.jpg with 8 processes
+Run 1:
+LTCP descriptor calculation time: 227 ms
+------------------------------------------
+Run 2:
+LTCP descriptor calculation time: 232 ms
+------------------------------------------
+Run 3:
+LTCP descriptor calculation time: 223 ms
+------------------------------------------
+Run 4:
+LTCP descriptor calculation time: 234 ms
+------------------------------------------
+Run 5:

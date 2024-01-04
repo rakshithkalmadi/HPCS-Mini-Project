@@ -1,0 +1,30 @@
+Running ./output for old/1152x1536.jpg serially
+Image loading time: 10 ms
+LTCP descriptor calculation time: 116 ms
+Total running time: 126 ms
+------------------------------------------
+Running ./output for old/1728x2304.jpg serially
+Image loading time: 20 ms
+LTCP descriptor calculation time: 264 ms
+Total running time: 284 ms
+------------------------------------------
+Running ./output for old/2304x3072.jpg serially
+Image loading time: 35 ms
+LTCP descriptor calculation time: 490 ms
+Total running time: 525 ms
+------------------------------------------
+Running ./output for old/2880x3840.jpg serially
+Image loading time: 65 ms
+LTCP descriptor calculation time: 815 ms
+Total running time: 880 ms
+------------------------------------------
+Running ./output for old/3456x4608.jpg serially
+Image loading time: 70 ms
+LTCP descriptor calculation time: 1014 ms
+Total running time: 1084 ms
+------------------------------------------
+Running ./output for old/4032x5376.jpg serially
+Image loading time: 98 ms
+LTCP descriptor calculation time: 1374 ms
+Total running time: 1472 ms
+------------------------------------------

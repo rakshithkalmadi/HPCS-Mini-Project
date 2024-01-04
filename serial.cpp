@@ -4,6 +4,7 @@
 #include <chrono>
 
 using namespace cv;
+using namespace std;
 
 int b(int a, int b, int c) {
     int positive_count = 0;
@@ -21,26 +22,25 @@ int b(int a, int b, int c) {
     return (positive_count >= 2) ? 1 : 0;
 }
 
-int main() {
+int main(int argc,char* argv[]) {
     auto start_time = std::chrono::high_resolution_clock::now();
-    Mat image = imread("image1.jpg", IMREAD_GRAYSCALE);
+    Mat image = imread(argv[1], IMREAD_GRAYSCALE);
     imwrite("grayscale_image.jpg", image);
     if (image.empty()) {
         printf("Image not found or could not be opened.\n");
         return 1;
     }
+	//cout<<image;
+	
+
+    Mat result_image(image.rows, image.cols, CV_8UC1); // Create a new image to store the results
 	auto image_load_time = std::chrono::high_resolution_clock::now();
 	auto image_loading_duration = std::chrono::duration_cast<std::chrono::milliseconds>(image_load_time - start_time);
 
-    Mat result_image(image.rows, image.cols, CV_8UC1); // Create a new image to store the results
-
-    for (int y = 0; y < image.rows; y++) {
-        for (int x = 0; x < image.cols; x++) 
+    for (int y = 1; y < image.rows; y++) {
+        for (int x = 1; x < image.cols; x++) 
         {
-        	if(x > 0 && x < image.cols - 1)
-        	{
-        		if(y > 0 && y < image.rows - 1)
-        		{
+        	
         			int C = image.at<uchar>(y, x);
             			int P0 = image.at<uchar>(y, x + 1);
             			int P1 = image.at<uchar>(y + 1, x + 1);
@@ -69,8 +69,7 @@ int main() {
             			// Set the pixel value in the result image
             			result_image.at<uchar>(y, x)=static_cast<uchar>(decimal_value);
             		}
-            	}            
-        }
+            	
     }
 	auto end_time = std::chrono::high_resolution_clock::now();
 
@@ -83,6 +82,7 @@ int main() {
 	printf("Total running time: %ld ms\n", total_duration.count());
     	// Save the result image
 	imwrite("result_image.jpg", result_image);
+	//cout<<result_image;
 
     return 0;
 }
