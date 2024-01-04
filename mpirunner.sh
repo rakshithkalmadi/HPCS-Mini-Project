@@ -34,7 +34,7 @@ for NUM_PROCESSES in {2..12..2}; do
 
             # Calculate the average duration
             average_duration=$((total_duration / 5))
-            echo "Average LTCP descriptor calculation time: $average_duration ms"
+            echo -e "Average LTCP descriptor calculation time: $average_duration ms\n"
         fi
     done
 done

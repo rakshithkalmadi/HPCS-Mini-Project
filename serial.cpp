@@ -31,10 +31,11 @@ int main(int argc,char* argv[]) {
         return 1;
     }
 	//cout<<image;
-	auto image_load_time = std::chrono::high_resolution_clock::now();
-	auto image_loading_duration = std::chrono::duration_cast<std::chrono::milliseconds>(image_load_time - start_time);
+	
 
     Mat result_image(image.rows, image.cols, CV_8UC1); // Create a new image to store the results
+	auto image_load_time = std::chrono::high_resolution_clock::now();
+	auto image_loading_duration = std::chrono::duration_cast<std::chrono::milliseconds>(image_load_time - start_time);
 
     for (int y = 1; y < image.rows; y++) {
         for (int x = 1; x < image.cols; x++) 
