@@ -200,16 +200,16 @@ int main(int argc, char *argv[]) {
 			printf("Kernel Elapsed time =%f\n",elapsedTime);
 
 			cudaMemcpy(out,d_out,((h-2)*(w-2)*sizeof(unsigned char)),cudaMemcpyDeviceToHost);
-
-
 			delete out;
 		}
 	}
 
 	cudaEventRecord(pstop, 0);
 	cudaEventSynchronize(pstop);
-	cudaEventElapsedTime(&totalelapsedTime, pstart, pstop);
-	printf("Program Elapsed time =%f\n",totalelapsedTime);
+	cudaEventElapsedTime(&totalelapsedTime, pstart, stop);
+	totalElapsedTime += elapsedTime;
 }
+float averageElapsedTime = totalElapsedTime / 50.0;
+printf("Average Program Elapsed time = %f\n", averageElapsedTime);
 	return 0;
 }
