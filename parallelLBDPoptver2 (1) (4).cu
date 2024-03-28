@@ -184,23 +184,21 @@ int main(int argc, char *argv[]) {
 			dim3 blk(std::max(w/TILE_WIDTH,1),std::max(h/TILE_HEIGHT,1));
 			dim3 thrd(std::min(w,TILE_WIDTH),std::min(h,TILE_HEIGHT));
 			//dim3 thrd(3,3);
-
+			
 			cudaEventCreate(&kstart);
 			cudaEventCreate(&kstop); 
-
-			cudaEventRecord(kstart, 0);
-			getLBDP<<<blk,thrd>>>(d_pdata,h,w,d_out);
-			
-			cudaEventRecord(kstop, 0);
-			cudaEventSynchronize(kstop);
-			float elapsedTime;
-			cudaEventElapsedTime(&elapsedTime, kstart, kstop);			
-			
-			printf("Kernel Elapsed time =%f\n",elapsedTime);
-
+			for (int i = 0; i < 50; ++i) {
+				cudaEventRecord(kstart, 0);
+				getLBDP<<<blk,thrd>>>(d_pdata,h,w,d_out);
+				cudaEventRecord(kstop, 0);
+				cudaEventSynchronize(kstop);
+				float elapsedTime;
+				cudaEventElapsedTime(&elapsedTime, kstart, kstop);			
+			        totalElapsedTime += elapsedTime;
+			}
+			float averageElapsedTime = totalElapsedTime / 50.0;
+    			printf("Average Kernel Elapsed time = %f\n", averageElapsedTime);
 			cudaMemcpy(out,d_out,((h-2)*(w-2)*sizeof(unsigned char)),cudaMemcpyDeviceToHost);
-
-
 			delete out;
 		}
 	}
