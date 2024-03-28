@@ -126,7 +126,8 @@ int main(int argc, char *argv[]) {
 	
 	cudaEvent_t pstart,pstop;
 
-	float elapsedTime;
+	float totalelapsedTime;
+	for (int i = 0; i < 50; ++i) {
 	cudaEventCreate(&pstart);
 	cudaEventCreate(&pstop);
 
@@ -207,8 +208,8 @@ int main(int argc, char *argv[]) {
 
 	cudaEventRecord(pstop, 0);
 	cudaEventSynchronize(pstop);
-	cudaEventElapsedTime(&elapsedTime, pstart, pstop);
-	printf("Program Elapsed time =%f\n",elapsedTime);
-
+	cudaEventElapsedTime(&totalelapsedTime, pstart, pstop);
+	printf("Program Elapsed time =%f\n",totalelapsedTime);
+}
 	return 0;
 }
