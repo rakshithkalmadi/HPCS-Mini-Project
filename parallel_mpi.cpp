@@ -97,21 +97,18 @@ int main(int argc, char* argv[]) {
            0, MPI_COMM_WORLD);
     
     
-    if (rank == 0) {
-        // std::cout<<result_image;
+     if (rank == 0) {
         auto end_time = std::chrono::high_resolution_clock::now();
 
-    	// Calculate the total running time
-	auto total_duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
-    auto ltcp_duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - ltcp_start_time);
+        auto total_duration = std::chrono::duration<float, std::milli>(end_time - start_time);
+        auto ltcp_duration = std::chrono::duration<float, std::milli>(end_time - ltcp_start_time);
 
-    	// Print the timings
-	// printf("Image loading time: %ld ms\n", image_loading_duration.count());
-	printf("LTCP descriptor calculation time: %ld ms\n", ltcp_duration.count());
-	// printf("Total running time: %ld ms\n", total_duration.count());
-	imwrite("small.png", result_image);
-    // std::cout<<result_image;
+        printf("LTCP descriptor calculation time: %.3f ms\n",ltcp_duration.count());
+        printf("Total running time: %.3f ms\n",total_duration.count());
+
+        imwrite("small.png", result_image);
     }
+
     MPI_Finalize();
 
     return 0;
