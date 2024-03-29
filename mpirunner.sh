@@ -4,7 +4,7 @@
 PROGRAM="./output_parallel"
 
 # Set the directory containing image files
-IMAGE_DIRECTORY="new/"
+IMAGE_DIRECTORY="Input\ images/"
 
 # Set the range of processors to loop through
 for NUM_PROCESSES in {2..12..2}; do
