@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 mpic++ parallel_mpi.cpp -O3 -o output_parallel `pkg-config --cflags --libs opencv4`
 
@@ -34,7 +34,7 @@ for NUM_PROCESSES in {2..8..2}; do
                # echo "LTCP descriptor calculation time: $duration ms"
 
                 # Add the duration to the total
-                total_duration=$((total_duration + duration))
+                total_duration=$(awk "BEGIN {print $total_duration + $duration}")
 
                 # Print a separator line for better readability
                 #echo "------------------------------------------"
@@ -46,4 +46,3 @@ for NUM_PROCESSES in {2..8..2}; do
         fi
     done
 done
-
