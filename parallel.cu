@@ -1,5 +1,3 @@
-// %%writefile parallel.cu
-
 #include <stdio.h>
 #include <stdlib.h>
 #include "opencv2/opencv.hpp"
@@ -28,7 +26,7 @@ __global__ void ltpcKernel(uchar* input, uchar* output, int rows, int cols) {
     int x = blockIdx.x * blockDim.x + threadIdx.x;
     int y = blockIdx.y * blockDim.y + threadIdx.y;
 
-    if (x > 0 && x < cols && y > 0 && y < rows) {
+    if (x > 0 && x < cols-1 && y > 0 && y < rows-1) {
         int C = input[y * cols + x];
         int P0 = input[y * cols + x + 1];
         int P1 = input[(y + 1) * cols + x + 1];
@@ -58,13 +56,24 @@ __global__ void ltpcKernel(uchar* input, uchar* output, int rows, int cols) {
     }
 }
 
-int main() {
+int main(int argc, char* argv[]) {
+  if (argc != 2) {
+        printf("Usage: %s <input_image>\n", argv[0]);
+        return 1;
+    }
     auto start_time = std::chrono::high_resolution_clock::now();
-    Mat image = imread("small_ip.png", IMREAD_GRAYSCALE);
+
+    //create events
+    cudaEvent_t event1, event2;
+    cudaEventCreate(&event1);
+    cudaEventCreate(&event2);
+
+    Mat image = imread(argv[1], IMREAD_GRAYSCALE);
     if (image.empty()) {
         printf("Image not found or could not be opened.\n");
         return 1;
     }
+    //cout<<image;
     auto image_load_time = std::chrono::high_resolution_clock::now();
     auto image_loading_duration = std::chrono::duration_cast<std::chrono::milliseconds>(image_load_time - start_time);
 
@@ -82,7 +91,18 @@ int main() {
     dim3 blockDim(16, 16);
     dim3 gridDim((cols + blockDim.x - 1) / blockDim.x, (rows + blockDim.y - 1) / blockDim.y);
 
+    //record events around kernel launch
+    cudaEventRecord(event1, 0);
     ltpcKernel<<<gridDim, blockDim>>>(d_input, d_output, rows, cols);
+    cudaEventRecord(event2, 0);
+
+    //synchronize
+    cudaEventSynchronize(event1); //optional
+    cudaEventSynchronize(event2); //wait for the event to be executed!
+
+    //calculate time
+    float dt_ms;
+    cudaEventElapsedTime(&dt_ms, event1, event2);
 
     cudaMemcpy(result_image.data, d_output, rows * cols * sizeof(uchar), cudaMemcpyDeviceToHost);
 
@@ -94,11 +114,11 @@ int main() {
     auto total_duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
 
     printf("Image loading time: %ld ms\n", image_loading_duration.count());
-    printf("LTCP descriptor calculation time: %ld ms\n", total_duration.count() - image_loading_duration.count());
+    printf("LTCP descriptor calculation time: %f ms\n", dt_ms);
     printf("Total running time: %ld ms\n", total_duration.count());
 
     imwrite("result_image.jpg", result_image);
-    cout<<result_image;
+    //cout<<result_image;
 
     return 0;
 }
