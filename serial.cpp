@@ -71,18 +71,16 @@ int main(int argc,char* argv[]) {
             		}
             	
     }
-	auto end_time = std::chrono::high_resolution_clock::now();
+auto end_time = std::chrono::high_resolution_clock::now();
 
-    	// Calculate the total running time
-	auto total_duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
+    auto total_duration = std::chrono::duration<float, std::milli>(end_time - start_time);
+    auto image_loading_duration_float = std::chrono::duration<float, std::milli>(image_loading_duration);
+    auto ltcp_calculation_duration_float = total_duration - image_loading_duration_float;
 
-    	// Print the timings
-	printf("Image loading time: %ld ms\n", image_loading_duration.count());
-	printf("LTCP descriptor calculation time: %ld ms\n", total_duration.count() - image_loading_duration.count());
-	printf("Total running time: %ld ms\n", total_duration.count());
-    	// Save the result image
-	imwrite("result_image.jpg", result_image);
-	//cout<<result_image;
+    printf("Image loading time: %.3f milliseconds\n", image_loading_duration_float.count());
+    printf("LTCP descriptor calculation time: %.3f milliseconds\n", ltcp_calculation_duration_float.count());
+    printf("Total running time: %.3f milliseconds\n", total_duration.count());
 
-    return 0;
+    imwrite("result_image.jpg", result_image);
+	return 0;
 }
