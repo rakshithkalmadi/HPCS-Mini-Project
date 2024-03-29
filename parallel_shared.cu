@@ -100,7 +100,11 @@ __global__ void ltpcKernel(uchar* input, uchar* output, int rows, int cols) {
     }
 }
 
-int main() {
+int main(int argc, char* argv[]) {
+  if (argc != 2) {
+        printf("Usage: %s <input_image>\n", argv[0]);
+        return 1;
+    }
     auto start_time = std::chrono::high_resolution_clock::now();
 
     //create events
@@ -108,7 +112,7 @@ int main() {
     cudaEventCreate(&event1);
     cudaEventCreate(&event2);
 
-    Mat image = imread("image1.jpg", IMREAD_GRAYSCALE);
+    Mat image = imread(argv[1], IMREAD_GRAYSCALE);
     if (image.empty()) {
         printf("Image not found or could not be opened.\n");
         return 1;
